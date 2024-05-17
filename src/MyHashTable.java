@@ -37,6 +37,11 @@ public class MyHashTable<K, V> {
     }
 
 
+    public int size(){
+        return size;
+    }
+
+
     public void put(K key, V value) {
         int index = hash(key);
         HashNode<K, V> node = chainArray[index];
@@ -114,4 +119,15 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
+    public static void main(String[] args){
+        MyHashTable table = new MyHashTable(10);
+        table.put(1, "Ailand");
+        table.put(2, "EXPO-2017");
+        table.put(4, "Keruen");
+        System.out.println(table.size());
+        System.out.println(table.remove(2));
+        System.out.println(table.remove(1));
+        System.out.println(table.size());
+        }
+
 }
